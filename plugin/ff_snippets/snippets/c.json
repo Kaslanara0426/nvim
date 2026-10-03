@@ -1,0 +1,13 @@
+{
+    "main(void) template": {
+        "prefix": "mainn_",
+        "body": [
+            "int main(void)",
+            "{",
+            "\t$0",
+            "\treturn EXIT_SUCCESS;",
+            "}"
+        ],
+        "description": "No-args main() snippet"
+    }
+}
