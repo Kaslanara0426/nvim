@@ -24,3 +24,5 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 ---- 让lsp符号列常驻
 --vim.opt.signcolumn = "yes"
 
+-- 隐藏命令行
+vim.opt.cmdheight = 0
