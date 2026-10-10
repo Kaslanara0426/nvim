@@ -33,3 +33,30 @@ require("mason-lspconfig").setup({
 })
 
 
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' } -- 将 vim 声明为全局变量
+      }
+    }
+  }
+})
+
+vim.lsp.config('clangd', {
+  init_options = {
+    -- 让 clangd 不自动补全尖括号
+    clangd = {
+      headerInsertion = "iwyu", -- 或者调整其他补全偏好
+    }
+  }
+})
+
+vim.lsp.config('clangd', {
+  -- 注意：这里用的是 cmd 而不是 init_options
+  cmd = {
+    'clangd',
+    '--completion-style=detailed', -- 强制使用最详细的补全粒度
+    '--function-arg-placeholders=0', -- 禁用函数参数占位符
+  },
+})
