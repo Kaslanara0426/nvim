@@ -25,14 +25,13 @@ require('blink.cmp').setup({
   },
   -- 命令行补全（独立于主补全功能）
   cmdline = { enabled = false },
-
   -- 补全核心行为
   completion = {
     -- 关键字匹配范围：'prefix' 仅匹配光标前，'full' 匹配光标前后
     keyword = { range = 'full' },
 
     -- 接受补全时的行为：启动自动括号
-    accept = { auto_brackets = { enabled = false } },
+    accept = { auto_brackets = { enabled = true } },
 
     -- 补全列表的选择行为
     -- 注意：此处只保留一份 list 配置，且 preselect 不支持函数
@@ -72,7 +71,25 @@ require('blink.cmp').setup({
   -- 补全来源
   sources = {
     -- 默认启用的来源，按优先级排序
-    default = {  'snippets', 'lsp', 'path', 'buffer' },
+    default = { 'lsp', 'path', 'snippets', 'buffer' },
+
+    providers = {
+      lsp = {
+        transform_items = function(_, items)
+          for _, item in ipairs(items) do
+            -- 针对 C/C++ 头文件补全，移除文本末尾的 '>'
+            if item.kind == require('blink.cmp.types').CompletionItemKind.File then
+              item.label = item.label:gsub('>$', '')
+              -- 如果补全项包含 textEdit，也需要同步修改
+              if item.textEdit and item.textEdit.newText then
+                item.textEdit.newText = item.textEdit.newText:gsub('>$', '')
+              end
+            end
+          end
+          return items
+        end,
+      },
+    },
   },
 
   -- 代码片段引擎预设
@@ -80,7 +97,7 @@ require('blink.cmp').setup({
   -- 可选值：'default'（内置）, 'luasnip', 'mini_snippets', 'vsnip'
   snippets = {
     preset = 'default',
-    score_offset = 100,
+    score_offset = 10,
   },
 
   -- 实验性签名帮助
@@ -92,14 +109,15 @@ require('blink.cmp').setup({
     winblend = 10
     }
   },
+
 })
 
-
-require("luasnip.loaders.from_snipmate").lazy_load()
--- load snippets from path/of/your/nvim/config/my-cool-snippets
+--
+-- require("luasnip.loaders.from_snipmate").lazy_load()
+-- -- load snippets from path/of/your/nvim/config/my-cool-snippets
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/home/firefly/.config/nvim/snippets" } })
-
-
+--
+--
 
 
 

@@ -72,6 +72,10 @@
       "rev": "58447c1fca354bbf184425e4a8d01deecbd6f3c4",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
+    "smear-cursor.nvim": {
+      "rev": "f6cb57c342268177f719acc3968b9d8de3ecc969",
+      "src": "https://github.com/sphamba/smear-cursor.nvim"
+    },
     "treewalker.nvim": {
       "rev": "976eb9921c2f26a9a4314b5a0f4842d447a49592",
       "src": "https://github.com/aaronik/treewalker.nvim"
