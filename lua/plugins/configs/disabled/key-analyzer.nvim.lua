@@ -1,0 +1,1 @@
+require("key-analyzer").setup({})

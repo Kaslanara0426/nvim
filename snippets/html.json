@@ -1,0 +1,105 @@
+{
+	"html5-bang": {
+		"prefix": "!",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"${1:en}\">",
+			"<head>",
+			"\t<meta charset=\"UTF-8\">",
+			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"\t<title>${2:Document}</title>",
+			"</head>",
+			"<body>",
+			"\t${0}",
+			"</body>",
+			"</html>"
+		],
+		"description": "HTML5 boilerplate (Emmet style)"
+	},
+	"html5": {
+		"prefix": "html5",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"${1:en}\">",
+			"<head>",
+			"\t<meta charset=\"UTF-8\">",
+			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"\t<title>${2:Document}</title>",
+			"</head>",
+			"<body>",
+			"\t${0}",
+			"</body>",
+			"</html>"
+		],
+		"description": "HTML5 boilerplate 基础骨架"
+	},
+	"link": {
+		"prefix": "link",
+		"body": [
+			"<link rel=\"stylesheet\" href=\"${1:style.css}\">"
+		],
+		"description": "引入外部 CSS 样式表"
+	},
+	"script": {
+		"prefix": "script",
+		"body": [
+			"<script src=\"${1:script.js}\"></script>"
+		],
+		"description": "引入外部 JavaScript 文件"
+	},
+	"img": {
+		"prefix": "img",
+		"body": [
+			"<img src=\"${1:path/to/image.png}\" alt=\"${2:alt text}\">"
+		],
+		"description": "插入图片标签"
+	},
+	"form": {
+		"prefix": "form",
+		"body": [
+			"<form action=\"${1:/submit}\" method=\"${2:POST}\">",
+			"\t<label for=\"${3:name}\">${4:Name}:</label>",
+			"\t<input type=\"text\" id=\"${3:name}\" name=\"${3:name}\" required>",
+			"\t",
+			"\t<button type=\"submit\">${5:Submit}</button>",
+			"</form>"
+		],
+		"description": "基础 HTML 表单结构"
+	},
+	"table": {
+		"prefix": "table",
+		"body": [
+			"<table>",
+			"\t<thead>",
+			"\t\t<tr>",
+			"\t\t\t<th>${1:Header 1}</th>",
+			"\t\t\t<th>${2:Header 2}</th>",
+			"\t\t</tr>",
+			"\t</thead>",
+			"\t<tbody>",
+			"\t\t<tr>",
+			"\t\t\t<td>${3:Data 1}</td>",
+			"\t\t\t<td>${4:Data 2}</td>",
+			"\t\t</tr>",
+			"\t</tbody>",
+			"</table>"
+		],
+		"description": "基础 HTML 表格结构"
+	},
+	"div>class": {
+		"prefix": "div.cls",
+		"body": [
+			"<div class=\"${1:class-name}\">",
+			"\t${0}",
+			"</div>"
+		],
+		"description": "带 class 的 div 容器"
+	},
+	"input-text": {
+		"prefix": "input:text",
+		"body": [
+			"<input type=\"text\" name=\"${1:name}\" id=\"${2:id}\" placeholder=\"${3:placeholder}\">"
+		],
+		"description": "文本输入框"
+	}
+}

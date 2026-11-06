@@ -1,0 +1,1 @@
+ZZrequire("nvim-autopairs").setup({})

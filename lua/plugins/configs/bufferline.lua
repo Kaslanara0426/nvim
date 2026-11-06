@@ -1,0 +1,15 @@
+-- require("bufferline").setup({
+-- 	options = {
+-- 		-- 推荐的基础设置
+-- 		mode = "buffers", -- 显示 buffers 而非 tabs
+-- 		diagnostics = "nvim_lsp", -- 显示 LSP 诊断错误/警告
+-- 		separator_style = "slant", -- 分隔符样式: "slant" | "pencil" | "none"
+-- 	},
+-- })
+--
+-- vim.keymap.set("n", "<leader>bj", "<cmd>BufferLineCycleNext<cr>", { desc = "下一个 Buffer" })
+-- vim.keymap.set("n", "<leader>bk", "<cmd>BufferLineCyclePrev<cr>", { desc = "上一个 Buffer" })
+-- vim.keymap.set("n", "<leader>bl", "<cmd>BufferLinePick<cr>", { desc = "选择 Buffer 跳转" })
+-- vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", { desc = "固定/取消固定 Buffer" })
+-- vim.keymap.set("n", "<leader>bch", "<cmd>BufferLineCloseLeft<cr>", { desc = "关闭左侧所有 Buffer" })
+-- vim.keymap.set("n", "<leader>bcl", "<cmd>BufferLineCloseRight<cr>", { desc = "关闭右侧所有 Buffer" })
